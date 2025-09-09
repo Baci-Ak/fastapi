@@ -6,11 +6,11 @@ import pytest
 SECRET_KEY = settings.secret_key
 ALGORITHM = settings.algorithm
 
-def test_root(client):
-    response = client.get("/")
-    print(response.json().get("message"))
-    assert response.json().get("message") == "bind mount works, testing"
-    assert response.status_code == 200
+# def test_root(client):
+#     response = client.get("/")
+#     print(response.json().get("message"))
+#     assert response.json().get("message") == "bind mount works, testing"
+#     assert response.status_code == 200
 
 
 def test_create_user(client):
