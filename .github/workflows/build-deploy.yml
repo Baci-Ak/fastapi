@@ -85,6 +85,11 @@ jobs:
       - name: pulling git repo
         uses: actions/checkout@v5
 
+      - name: Install Heroku CLI
+        run: |
+          curl https://cli-assets.heroku.com/install.sh | sh
+      # using heroku deployment
+
       - name: Deploy to heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
