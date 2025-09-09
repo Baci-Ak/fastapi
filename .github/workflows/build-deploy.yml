@@ -88,22 +88,14 @@ jobs:
       - name: Install Heroku CLI
         run: |
           curl https://cli-assets.heroku.com/install.sh | sh
-      # using heroku deployment
-
-      - name: Deploy to Heroku
-        uses: akhilesh152/heroku-deploy@v2.0.0
+      #using heroku deployment
+      - name: Deploy to heroku
+        uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          email: ${{ secrets.HEROKU_EMAIL }}
-          api_key: ${{ secrets.HEROKU_API_KEY }}
-          app_name: ${{ secrets.HEROKU_APP_NAME }}
-
-      # - name: Deploy to heroku
-      #   #uses: akhileshns/heroku-deploy@v3.12.12
-      #   with:
-      #     heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-      #     heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
-      #     heroku_email: ${{secrets.HEROKU_EMAIL}}
-      #     usedocker: false
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          usedocker: false
 
       # using Docker deployment
       # - name: Deploy to Heroku (Docker)
