@@ -7,8 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: pulling git repo
-        uses: actions/checkout@v2
-      - name: say hello to Baci
-        run: echo "Hello Baci"
+        uses: actions/checkout@v5
+      - name: installing python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.10'
+      - name: upgrading pip
+        run: python -m pip install --upgrade pip
+      - name: installing requirements
+        run: pip install -r requirements.txt
 
 
